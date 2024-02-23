@@ -2,6 +2,8 @@ import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { baseColors } from "../constants/colors";
+
 export function ViewImage() {
   const { top } = useSafeAreaInsets();
 
@@ -29,7 +31,7 @@ function Icons() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: baseColors.black,
   },
   icons: {
     flexDirection: "row",
@@ -39,12 +41,12 @@ const styles = StyleSheet.create({
   closeIcon: {
     width: 50,
     height: 50,
-    backgroundColor: "#fc5c65",
+    backgroundColor: baseColors.primary,
   },
   deleteIcon: {
     width: 50,
     height: 50,
-    backgroundColor: "#4ecdc4",
+    backgroundColor: baseColors.secondary,
   },
   image: {
     width: "100%",

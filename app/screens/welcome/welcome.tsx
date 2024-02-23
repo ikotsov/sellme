@@ -1,6 +1,8 @@
-import { ImageBackground, Text, Image, View, StyleSheet } from "react-native";
+import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import ASSETS_SOURCES from "./assets/sources";
+
+import { baseColors } from "@/app/constants/colors";
 
 export function Welcome() {
   return (
@@ -47,10 +49,10 @@ const styles = StyleSheet.create({
     height: 100,
   },
   loginButton: {
-    backgroundColor: "#fc5c65",
+    backgroundColor: baseColors.primary,
   },
   registerButton: {
-    backgroundColor: "#4ecdc4",
+    backgroundColor: baseColors.secondary,
   },
   button: {
     width: "100%",
