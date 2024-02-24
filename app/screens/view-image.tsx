@@ -1,3 +1,4 @@
+import MaterialCommunityIcon from "@expo/vector-icons/MaterialCommunityIcons";
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -22,8 +23,8 @@ export function ViewImage() {
 function Icons() {
   return (
     <View style={styles.icons}>
-      <View style={styles.closeIcon} />
-      <View style={styles.deleteIcon} />
+      <MaterialCommunityIcon name="close" color="white" size={30} />
+      <MaterialCommunityIcon name="trash-can-outline" color="white" size={30} />
     </View>
   );
 }
@@ -37,16 +38,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 20,
-  },
-  closeIcon: {
-    width: 50,
-    height: 50,
-    backgroundColor: baseColors.primary,
-  },
-  deleteIcon: {
-    width: 50,
-    height: 50,
-    backgroundColor: baseColors.secondary,
   },
   image: {
     width: "100%",
