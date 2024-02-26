@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
   },
   buttons: {
     paddingHorizontal: 10,
+    rowGap: 15,
     paddingBottom: 20,
   },
 });
