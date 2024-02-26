@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { baseColors } from "../constants/colors";
 
-export function ViewImage() {
+function ViewImage() {
   const { top } = useSafeAreaInsets();
 
   return (
@@ -44,3 +44,5 @@ const styles = StyleSheet.create({
     height: "100%",
   },
 });
+
+export default ViewImage;

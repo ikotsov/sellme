@@ -5,7 +5,7 @@ import ASSETS_SOURCES from "./assets/sources";
 import Button from "@components/button";
 import { baseColors } from "@constants/colors";
 
-export function Welcome() {
+function Welcome() {
   return (
     <ImageBackground
       source={ASSETS_SOURCES.background}
@@ -72,3 +72,5 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
 });
+
+export default Welcome;
