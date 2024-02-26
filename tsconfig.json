@@ -4,6 +4,7 @@
     "strict": true,
     "paths": {
       "@/*": ["./*"],
+      "@components/*": ["./app/components/*"],
       "@constants/*": ["./app/constants/*"]
     }
   },

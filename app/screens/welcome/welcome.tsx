@@ -3,6 +3,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import ASSETS_SOURCES from "./assets/sources";
 
 import { baseColors } from "@constants/colors";
+import Button from "@components/button";
 
 export function Welcome() {
   return (
@@ -32,9 +33,11 @@ function Logo() {
 
 function CtaButtons() {
   return (
-    <View>
-      <View style={[styles.button, styles.loginButton]} />
-      <View style={[styles.button, styles.registerButton]} />
+    <View style={styles.buttons}>
+      <Button onPress={() => null}>LOGIN</Button>
+      <Button onPress={() => null} secondary>
+        REGISTER
+      </Button>
     </View>
   );
 }
@@ -54,8 +57,8 @@ const styles = StyleSheet.create({
   registerButton: {
     backgroundColor: baseColors.secondary,
   },
-  button: {
-    width: "100%",
-    height: 70,
+  buttons: {
+    paddingHorizontal: 10,
+    paddingBottom: 20,
   },
 });
