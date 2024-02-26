@@ -24,7 +24,7 @@ function Logo() {
   return (
     <View style={styles.logoBox}>
       <Image style={styles.logo} source={ASSETS_SOURCES.logo} />
-      <Text style={styles.logoText}>Sell anything you want</Text>
+      <Text style={styles.tagline}>Sell anything you want</Text>
     </View>
   );
 }
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     height: 100,
     marginBottom: 20,
   },
-  logoText: {
+  tagline: {
     fontSize: 25,
     fontWeight: "700",
     textTransform: "capitalize",
