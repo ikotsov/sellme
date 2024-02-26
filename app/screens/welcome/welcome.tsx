@@ -1,32 +1,29 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import ASSETS_SOURCES from "./assets/sources";
 
 import Button from "@components/button";
 import { baseColors } from "@constants/colors";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 function Welcome() {
   return (
     <ImageBackground
       source={ASSETS_SOURCES.background}
-      style={styles.background}
       blurRadius={10}
+      style={styles.background}
     >
-      <Logo />
-      <CtaButtons />
+      <SafeAreaView style={styles.container}>
+        <Logo />
+        <CtaButtons />
+      </SafeAreaView>
     </ImageBackground>
   );
 }
 
 function Logo() {
-  const { top } = useSafeAreaInsets();
-
   return (
     <View style={styles.logoBox}>
-      <Image
-        style={[styles.logo, { marginTop: top }]}
-        source={ASSETS_SOURCES.logo}
-      />
+      <Image style={styles.logo} source={ASSETS_SOURCES.logo} />
       <Text style={styles.logoText}>Sell anything you want</Text>
     </View>
   );
@@ -43,6 +40,9 @@ function CtaButtons() {
 
 const styles = StyleSheet.create({
   background: {
+    flex: 1,
+  },
+  container: {
     flex: 1,
     justifyContent: "space-between",
   },
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
   buttons: {
     paddingHorizontal: 20,
     rowGap: 10,
-    paddingBottom: 20,
   },
 });
 
