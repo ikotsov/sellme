@@ -10,7 +10,7 @@ export function Welcome() {
     <ImageBackground
       source={ASSETS_SOURCES.background}
       style={styles.background}
-      blurRadius={5}
+      blurRadius={10}
     >
       <Logo />
       <CtaButtons />
@@ -35,9 +35,9 @@ function Logo() {
 function CtaButtons() {
   return (
     <View style={styles.buttons}>
-      <Button onPress={() => null}>LOGIN</Button>
+      <Button onPress={() => null}>Login</Button>
       <Button onPress={() => null} secondary>
-        REGISTER
+        Register
       </Button>
     </View>
   );
@@ -55,10 +55,10 @@ const styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 100,
-    marginBottom: 10,
+    marginBottom: 20,
   },
   logoText: {
-    fontSize: 18,
+    fontSize: 25,
     fontWeight: "700",
     textTransform: "capitalize",
   },
@@ -69,8 +69,8 @@ const styles = StyleSheet.create({
     backgroundColor: baseColors.secondary,
   },
   buttons: {
-    paddingHorizontal: 10,
-    rowGap: 15,
+    paddingHorizontal: 20,
+    rowGap: 10,
     paddingBottom: 20,
   },
 });

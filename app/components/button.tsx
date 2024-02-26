@@ -42,12 +42,14 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     width: "100%",
-    paddingVertical: 10,
-    borderRadius: 150,
+    paddingVertical: 15,
+    borderRadius: 25,
   },
   text: {
     color: baseColors.white,
+    fontSize: 18,
     fontWeight: "700",
+    textTransform: "uppercase",
   },
 });
 
