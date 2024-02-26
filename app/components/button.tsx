@@ -12,12 +12,12 @@ import { baseColors } from "@constants/colors";
 type Props = {
   onPress: () => void;
   secondary?: boolean;
-  children: string;
+  title: string;
   style?: StyleProp<ViewStyle>;
 };
 
 function Button(props: Props) {
-  const { secondary = false, onPress, children, style } = props;
+  const { secondary = false, onPress, title, style } = props;
 
   return (
     <Pressable
@@ -33,7 +33,7 @@ function Button(props: Props) {
         styles.button,
       ]}
     >
-      <Text style={styles.text}>{children}</Text>
+      <Text style={styles.text}>{title}</Text>
     </Pressable>
   );
 }

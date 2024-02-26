@@ -35,10 +35,8 @@ function Logo() {
 function CtaButtons() {
   return (
     <View style={styles.buttons}>
-      <Button onPress={() => null}>Login</Button>
-      <Button onPress={() => null} secondary>
-        Register
-      </Button>
+      <Button title="Login" onPress={() => null} />
+      <Button title="Register" onPress={() => null} secondary />
     </View>
   );
 }
