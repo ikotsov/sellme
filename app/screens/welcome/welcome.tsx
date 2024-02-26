@@ -2,8 +2,8 @@ import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import ASSETS_SOURCES from "./assets/sources";
 
-import { baseColors } from "@constants/colors";
 import Button from "@components/button";
+import { baseColors } from "@constants/colors";
 
 export function Welcome() {
   return (
