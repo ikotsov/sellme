@@ -10,6 +10,7 @@ export function Welcome() {
     <ImageBackground
       source={ASSETS_SOURCES.background}
       style={styles.background}
+      blurRadius={5}
     >
       <Logo />
       <CtaButtons />
@@ -21,12 +22,12 @@ function Logo() {
   const { top } = useSafeAreaInsets();
 
   return (
-    <View style={{ alignItems: "center" }}>
+    <View style={styles.logoBox}>
       <Image
         style={[styles.logo, { marginTop: top }]}
         source={ASSETS_SOURCES.logo}
       />
-      <Text>Sell anything you want</Text>
+      <Text style={styles.logoText}>Sell anything you want</Text>
     </View>
   );
 }
@@ -47,9 +48,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-between",
   },
+  logoBox: {
+    alignItems: "center",
+    paddingTop: 20,
+  },
   logo: {
     width: 100,
     height: 100,
+    marginBottom: 10,
+  },
+  logoText: {
+    fontSize: 18,
+    fontWeight: "700",
+    textTransform: "capitalize",
   },
   loginButton: {
     backgroundColor: baseColors.primary,
