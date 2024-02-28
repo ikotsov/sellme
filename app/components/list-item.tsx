@@ -2,6 +2,7 @@ import React from "react";
 import {
   Image,
   ImageSourcePropType,
+  Pressable,
   StyleSheet,
   Text,
   View,
@@ -13,18 +14,27 @@ type Props = {
   image: ImageSourcePropType;
   title: string;
   subtitle: string;
+  onPress: () => void;
 };
 
 function ListItem(props: Props) {
-  const { image, title, subtitle } = props;
+  const { image, title, subtitle, onPress } = props;
+
   return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={image} />
-      <View>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subtitle}>{subtitle}</Text>
+    <Pressable
+      onPress={onPress}
+      style={({ pressed }) => ({
+        backgroundColor: pressed ? baseColors.grey.light : baseColors.white,
+      })}
+    >
+      <View style={styles.container}>
+        <Image style={styles.image} source={image} />
+        <View>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.subtitle}>{subtitle}</Text>
+        </View>
       </View>
-    </View>
+    </Pressable>
   );
 }
 
