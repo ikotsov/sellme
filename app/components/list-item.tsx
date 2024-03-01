@@ -19,7 +19,7 @@ type Props = {
   image?: ImageSourcePropType;
   Icon?: React.ReactElement;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   onPress?: () => void;
   renderRightActions?: RightActionsRenderer;
 };
@@ -40,7 +40,7 @@ function ListItem(props: Props) {
           {image ? <Image style={styles.image} source={image} /> : null}
           <View style={styles.details}>
             <Text style={styles.title}>{title}</Text>
-            <Text style={styles.subtitle}>{subtitle}</Text>
+            {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
           </View>
         </View>
       </Pressable>
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     borderRadius: 35,
   },
   details: {
+    justifyContent: "center",
     marginLeft: 10,
   },
   title: {
