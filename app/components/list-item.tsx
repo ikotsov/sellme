@@ -16,7 +16,8 @@ type RightActionsRenderer = React.ComponentProps<
 >["renderRightActions"];
 
 type Props = {
-  image: ImageSourcePropType;
+  image?: ImageSourcePropType;
+  Icon?: React.ReactElement;
   title: string;
   subtitle: string;
   onPress?: () => void;
@@ -24,7 +25,7 @@ type Props = {
 };
 
 function ListItem(props: Props) {
-  const { image, title, subtitle, onPress, renderRightActions } = props;
+  const { image, title, subtitle, onPress, renderRightActions, Icon } = props;
 
   return (
     <Swipeable renderRightActions={renderRightActions}>
@@ -35,8 +36,9 @@ function ListItem(props: Props) {
         })}
       >
         <View style={styles.container}>
-          <Image style={styles.image} source={image} />
-          <View>
+          {Icon ? Icon : null}
+          {image ? <Image style={styles.image} source={image} /> : null}
+          <View style={styles.details}>
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.subtitle}>{subtitle}</Text>
           </View>
@@ -55,7 +57,9 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 35,
-    marginRight: 10,
+  },
+  details: {
+    marginLeft: 10,
   },
   title: {
     marginBottom: 5,
