@@ -9,32 +9,40 @@ import {
 } from "react-native";
 
 import { baseColors } from "@constants/colors";
+import { Swipeable } from "react-native-gesture-handler";
+
+type RightActionsRenderer = React.ComponentProps<
+  typeof Swipeable
+>["renderRightActions"];
 
 type Props = {
   image: ImageSourcePropType;
   title: string;
   subtitle: string;
-  onPress: () => void;
+  onPress?: () => void;
+  renderRightActions?: RightActionsRenderer;
 };
 
 function ListItem(props: Props) {
-  const { image, title, subtitle, onPress } = props;
+  const { image, title, subtitle, onPress, renderRightActions } = props;
 
   return (
-    <Pressable
-      onPress={onPress}
-      style={({ pressed }) => ({
-        backgroundColor: pressed ? baseColors.grey.light : baseColors.white,
-      })}
-    >
-      <View style={styles.container}>
-        <Image style={styles.image} source={image} />
-        <View>
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.subtitle}>{subtitle}</Text>
+    <Swipeable renderRightActions={renderRightActions}>
+      <Pressable
+        onPress={onPress}
+        style={({ pressed }) => ({
+          backgroundColor: pressed ? baseColors.grey.light : baseColors.white,
+        })}
+      >
+        <View style={styles.container}>
+          <Image style={styles.image} source={image} />
+          <View>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.subtitle}>{subtitle}</Text>
+          </View>
         </View>
-      </View>
-    </Pressable>
+      </Pressable>
+    </Swipeable>
   );
 }
 
