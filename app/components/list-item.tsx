@@ -16,6 +16,7 @@ type RightActionsRenderer = React.ComponentProps<
 >["renderRightActions"];
 
 type Props = {
+  // TODO: Find a better API to handle image and icon.
   image?: ImageSourcePropType;
   Icon?: React.ReactElement;
   title: string;
