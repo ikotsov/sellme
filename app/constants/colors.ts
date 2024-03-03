@@ -10,6 +10,7 @@ export const baseColors = {
     medium: "#6e6969",
     light: "#f8f4f4",
   },
+  yellow: "#ffe66d",
 };
 
 export default {
