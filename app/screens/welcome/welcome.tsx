@@ -1,7 +1,7 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import Button from "@components/button";
+import Screen from "@components/screen";
 import { baseColors } from "@constants/colors";
 import ASSETS_SOURCES from "./assets/sources";
 
@@ -12,10 +12,10 @@ function Welcome() {
       blurRadius={10}
       style={styles.background}
     >
-      <SafeAreaView style={styles.container}>
+      <Screen flavor="none" style={styles.container}>
         <Logo />
         <CtaButtons />
-      </SafeAreaView>
+      </Screen>
     </ImageBackground>
   );
 }
@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   container: {
-    flex: 1,
     justifyContent: "space-between",
   },
   logoBox: {

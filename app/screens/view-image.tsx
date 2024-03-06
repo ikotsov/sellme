@@ -1,20 +1,19 @@
 import MaterialCommunityIcon from "@expo/vector-icons/MaterialCommunityIcons";
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
-import { baseColors } from "../constants/colors";
+import Screen from "@components/screen";
 
 function ViewImage() {
   return (
-    <SafeAreaView style={styles.container}>
+    <Screen flavor="dark" isFullScreen={false} style={styles.container}>
       <Icons />
       <Image
         resizeMode="contain"
         style={styles.image}
         source={require("../assets/images/chair.jpg")}
       />
-    </SafeAreaView>
+    </Screen>
   );
 }
 
@@ -30,7 +29,6 @@ function Icons() {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
-    backgroundColor: baseColors.black,
   },
   icons: {
     flexDirection: "row",

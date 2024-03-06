@@ -1,10 +1,10 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { FlatList, Pressable, StyleSheet } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import ListItem from "@components/list-item";
 import ListItemSeparator from "@components/list-item-separator";
+import Screen from "../components/screen";
 import { baseColors } from "@constants/colors";
 
 type Message = {
@@ -46,7 +46,7 @@ function Messages() {
   };
 
   return (
-    <SafeAreaView style={styles.screen}>
+    <Screen flavor="none">
       <FlatList
         data={messages}
         keyExtractor={(message) => message.id}
@@ -74,7 +74,7 @@ function Messages() {
           ])
         }
       />
-    </SafeAreaView>
+    </Screen>
   );
 }
 
@@ -91,9 +91,6 @@ function ListItemDeleteAction({ onPress }: { onPress: () => void }) {
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-  },
   deleteButton: {
     justifyContent: "center",
     alignItems: "center",

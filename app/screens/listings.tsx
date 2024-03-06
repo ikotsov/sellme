@@ -1,9 +1,8 @@
 import React from "react";
 import { FlatList, StyleSheet } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import Card from "@components/card";
-import { baseColors } from "@constants/colors";
+import Screen from "@components/screen";
 
 const LISTINGS = [
   {
@@ -22,7 +21,7 @@ const LISTINGS = [
 
 function Listings() {
   return (
-    <SafeAreaView style={styles.screen}>
+    <Screen style={styles.screen}>
       <FlatList
         data={LISTINGS}
         keyExtractor={(listing) => listing.id}
@@ -34,15 +33,13 @@ function Listings() {
           />
         )}
       />
-    </SafeAreaView>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1,
     paddingHorizontal: 20,
-    backgroundColor: baseColors.grey.light,
   },
 });
 

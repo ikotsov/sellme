@@ -1,13 +1,14 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
-import { baseColors } from "@constants/colors";
-import ListItem from "@components/list-item";
 import Gap from "@components/gap";
+import ListItem from "@components/list-item";
+import Screen from "@components/screen";
+import { baseColors } from "@constants/colors";
 
 function ListingDetails() {
   return (
-    <View>
+    <Screen isFullScreen={false} withinSafeArea={false} flavor="none">
       <Image
         style={styles.image}
         source={require("../assets/images/jacket.jpg")}
@@ -22,7 +23,7 @@ function ListingDetails() {
           subtitle="5 Listings"
         />
       </View>
-    </View>
+    </Screen>
   );
 }
 
